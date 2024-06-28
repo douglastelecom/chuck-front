@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import HeaderChuck from './components/Header'
+import Header from './components/Header/Header'
+import Home from './components/Home/Home'
 import './App.css'
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
 
   return (
     <>
-    <HeaderChuck />
+    <Header/>
+    <Home />
     </>
   )
 }
