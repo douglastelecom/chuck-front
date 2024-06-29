@@ -1,8 +1,8 @@
-import './home.css'
+import './banner.css'
 
-export default function Home(): any {
+export default function Banner(): any {
     return (
-        <div className="div-background h-lvh bg-chuck" >
+        <div style={{height: '60vh'}} className="bg-center bg- bg-no-repeat h-90 bg-chuck bg-cover" >
         </div>
 
         // <header className="bg-orangeheader text-white p-4 shadow-md">

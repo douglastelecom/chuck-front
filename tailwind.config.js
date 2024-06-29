@@ -10,7 +10,7 @@ export default {
         orangeheader: '#E66E1A',
       },
       backgroundImage: {
-        'chuck': "url('assets/chuck.png')",
+        'chuck': "url('assets/chuck-wallpaper.png')",
       }
     },
   },
