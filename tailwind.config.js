@@ -7,7 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        orangeheader: '#FF7F3E',
+        orangeheader: '#D45133',
+      },
+      backgroundImage: {
+        'chuck': "url('assets/chuck-wallpaper.png')",
       }
     },
   },
