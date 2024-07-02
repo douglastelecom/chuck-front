@@ -7,6 +7,7 @@ import Popup from './components/Popup/Popup'
 
 function App() {
   const [showPopup, setShowPopup] = useState(false)
+  const [popupType, setPopupType] = useState("read")
 
   const closePopup = () => {
     setShowPopup(false)
@@ -19,9 +20,9 @@ function App() {
   return (
     <>
     <Header/>
-    <Popup type='read' showPopup={showPopup} closePopup={closePopup} description={popupDescription} />
+    <Popup type={popupType} showPopup={showPopup} closePopup={closePopup} description={popupDescription} />
     <Banner />
-    <Cards setShowPopup={setShowPopup} setPopupDescription={setPopupDescription} />
+    <Cards setShowPopup={setShowPopup} setPopupDescription={setPopupDescription} setPopupType={setPopupType} />
     </>
   )
 }

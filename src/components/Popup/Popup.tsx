@@ -1,37 +1,56 @@
+import { useState } from "react";
+import { saveJoke } from "../../service"
+
 interface Popup {
-  type: string,
+  type: any,
   showPopup: boolean,
   description?: any,
   closePopup: () => void
 }
 
 export default function Popup({type, showPopup, description, closePopup}: Popup){
+  const [jokeDescription, setJokeDescription] = useState('')
+  
+  const sendJoke = () => {
+    saveJoke(jokeDescription);
+  }
+
+  const onchangeJoke = (e: any) => {
+    setJokeDescription(e.target.value)
+  }
+
+  var text: string = ""
+
   if(showPopup){
     if(type === "read"){
       return (
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-          <div style={{height: '40vh', width: '40vw'}} className="relative bg-white p-4 rounded-lg shadow-lg max-w-md w-full">
+        <div className="absolute w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+          <div style={{width: '40vw'}} className="relative bg-white p-4 rounded-lg shadow-lg max-w-md w-full">
             <button onClick={closePopup} style={{height: '2rem'}}
-              className="absolute top-0 right-0 text-gray-300 font-bold rounded-full mr-1">
+              className="hover:cursor-pointer absolute top-0 right-1 text-gray-300 font-bold rounded-full mr-1">
                 X
             </button>
-            <div className="text-black text-center flex inline-flex" style={{height: '100%'}}>
+            <div className="text-black text-center flex inline-flex">
               <p>{description}</p>
             </div>
           </div>
         </div>
       )
-    } else if (type === "insert"){
-      <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-4 rounded-lg shadow-lg max-w-md w-full">
+    } else if (type === "write"){
+      return (
+      <div className="absolute w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+      <div style={{width: '40vw'}} className="relative bg-white p-4 rounded-lg shadow-lg max-w-md w-full">
         <button onClick={closePopup}
-          className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full">
+          className="hover:cursor-pointer absolute top-0 right-1 text-gray-300 font-bold rounded-full mr-1">
+            X
         </button>
-        <div className="text-black text-center">
+        <div className=" text-center">
+        <textarea value={jokeDescription} onChange={onchangeJoke} className="w-full p-2 rounded-md" placeholder="Digite sua curiosidade aqui"></textarea>
+        <button onClick={sendJoke} className="bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"/>
         </div>
       </div>
     </div>
-    }
+    )}
   }  
 
 }

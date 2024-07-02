@@ -6,4 +6,9 @@ export async function getJoke(){
     return response.data.descricao
 }
 
+export async function saveJoke(joke_description: string){
+    const response = await axios.post('http://localhost:8080/joke', joke_description);
+}
+
+
 
