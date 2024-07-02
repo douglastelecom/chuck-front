@@ -45,8 +45,10 @@ export default function Popup({type, showPopup, description, closePopup}: Popup)
             X
         </button>
         <div className=" text-center">
-        <textarea value={jokeDescription} onChange={onchangeJoke} className="w-full p-2 rounded-md" placeholder="Digite sua curiosidade aqui"></textarea>
-        <button onClick={sendJoke} className="bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"/>
+        <textarea value={jokeDescription} onChange={onchangeJoke} className="text-black w-full p-2 rounded-md bg-white" placeholder="Digite sua curiosidade aqui"></textarea>
+        <button onClick={sendJoke} className="text-white bg-black font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+        Enviar curiosidade
+        </button>
         </div>
       </div>
     </div>
