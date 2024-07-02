@@ -9,10 +9,10 @@ interface Card {
 export default function Cards({setShowPopup, setPopupDescription, setPopupType}: Card) {
   const onclickread = async () => {
     // debugger
-    // const joke = await getJoke()
+    const joke = await getJoke()
     setPopupType("read")
     setShowPopup(true)
-    // setPopupDescription(joke)
+    setPopupDescription(joke)
   }
   const onclickwrite = async () => {
     setPopupType("write")
