@@ -7,9 +7,7 @@ export async function getJoke(){
 }
 
 export async function saveJoke(joke_description: string){
-    debugger
     const response = await axios.post('http://localhost:8080/joke', {joke_description: joke_description});
-    debugger
 }
 
 
