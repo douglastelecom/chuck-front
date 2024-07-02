@@ -11,8 +11,13 @@ interface Popup {
 export default function Popup({type, showPopup, description, closePopup}: Popup){
   const [jokeDescription, setJokeDescription] = useState('')
   
-  const sendJoke = () => {
-    saveJoke(jokeDescription);
+  const sendJoke = async () => {
+    try{
+     await saveJoke(jokeDescription);
+     alert("Curiosidade enviada!")
+    }catch(error: any){
+      alert("Ops, houve um problema com o envio. Tente novamente mais tarde.")
+    }
   }
 
   const onchangeJoke = (e: any) => {
