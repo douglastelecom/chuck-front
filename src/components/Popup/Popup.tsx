@@ -24,8 +24,6 @@ export default function Popup({type, showPopup, description, closePopup}: Popup)
     setJokeDescription(e.target.value)
   }
 
-  var text: string = ""
-
   if(showPopup){
     if(type === "read"){
       return (
