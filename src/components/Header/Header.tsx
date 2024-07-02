@@ -9,9 +9,9 @@ export default function Header(): any {
                     {/* <a href="/jokes" className="hover:text-gray-800 mr-4">
                         Piadas
                     </a> */}
-                    <a href="/about" className="hover:text-gray-800 mr-4">
+                    {/* <a href="/about" className="hover:text-gray-800 mr-4">
                         Sobre
-                    </a>
+                    </a> */}
                 </nav>
             </div>
         </header>
